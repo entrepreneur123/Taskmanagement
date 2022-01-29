@@ -36,17 +36,16 @@ let complexity = [
 
 user.forEach((element) => {
   document.getElementById("assign_task").innerHTML += `
-    <option value="${element.id}">${element.name}</option>`;
+    <option value="${element.name}">${element.name}</option>`;
 });
 
 complexity.forEach((give) => {
   document.getElementById("select_complexity").innerHTML += `
-  <option>"${give.type}"</option>`;
+  <option>${give.type}</option>`;
 });
 
 const display = () => {
-  document.getElementById("resultid").innerHTML = task
-    .map(
+  document.getElementById("resultid").innerHTML = task.map(
       (todo) => `
     <div class="flex-area">
     <div class="task-content ">
@@ -54,7 +53,7 @@ const display = () => {
     <div>description:${todo.description}</div>
     </div>
     </br>
-    <div class="assignn">Assignee:${todo.assignee}</div>
+    <div class="assignn">Assignee:${todo.assigneeName}</div>
     </br>
     <div class="complexx">complexity:${todo.complexity}</div>
     </br> 
@@ -72,15 +71,20 @@ const Add = (x) => {
   let title = document.getElementById("input__titleid").value;
   let description = document.getElementById("input__descriptionid").value;
   let complexity = document.getElementById("select_complexity").value;
-  let assigneeId = document.getElementById("assign_task").value;
-  console.log(assigneeId);
-  let assignee = user.filter((assign) => assign.id == assigneeId)[0].name;
+
+
+  let assigneeName = document.getElementById("assign_task").value;
+  // console.log(assigneeName);
+  // console.log(assigneeId);
+
+  
+  // let assignee = user.filter((assign) => assign.id == assigneeId)[0].name;
   task.push({
-    id,
-    title,
-    description,
-    user,
-    complexity,
+    id:id,
+    title:title,
+    description:description,
+    assigneeName:assigneeName,
+    complexity:complexity,
   });
   id++;
   document.getElementById("input__titleid").value = "";
@@ -98,7 +102,7 @@ taskForm.addEventListener("click", (x) => x.preventDefault());
 //prevents default action i.e. refreshing the page when form is submitted
 
 const edit = (id) => {
-  editStatus = True;
+  editStatus = true;
   document.getElementById("btnid").innerHTML =
     editStatus == false
       ? `<button type="submit" id="submitbutton" onClick="{Add()}">Add</button>`
@@ -115,15 +119,15 @@ const Update = (id) => {
   let title = document.getElementById("input__titleid").value;
   let description = document.getElementById("input__descriptionid").value;
   let complexity = document.getElementById("select_complexity").value;
-  let assigneeId = document.getElementById("assign_task").value;
-  console.log(assigneeId);
-  let assignee = user.filter((assign) => assign.id == assigneeId)[0].name;
+  let assigneeName = document.getElementById("assign_task").value;
+  // console.log(assigneeId);
+  // let assignee = user.filter((assign) => assign.id == assigneeId)[0].name;
   task.map((x) => {
     if (x.id == id) {
       x.title = title;
       x.description = description;
       x.complexity = complexity;
-      x.assignee = assignee;
+      x.assigneeName = assigneeName;
     }
   });
   editStatus = false;

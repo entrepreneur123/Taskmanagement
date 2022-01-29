@@ -29,14 +29,17 @@
         </div>
         <label>complexity:</label>
         <select
-          name="complixity"
+          name="complexity"
           id="select_complexity"
           class="complex"
         ></select>
         <label>Assign To</label>
-        <select name="assign" id="assign_task" class="assign"></select>
+        <select name="assign" id="assign_task" class="assign">
+          
+        </select>
         <br />
-        <div class="btn" id="btnid"></div>
+        <button class="btn" id="addBtn" onclick="Add()">Add</button>
+        <button class="btn" id="updateBtn" onclick="Update()">Update</button>
       </form>
       <h1>Your todos</h1>
       <div class="result" id="resultid"></div>

@@ -28,17 +28,27 @@ body {
 }
 
 button {
-  padding: 0px 16px;
+  padding: 10px 16px;
+  text-transform: uppercase;
   margin: 8px;
   border-radius: 6px;
   background-color: chocolate;
+  border:none;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-area {
+  margin:30px;
   background-color: rgb(164, 147, 179);
   text-align: center;
-  width: 200px;
-  height: 200px;
+  /* width: 200px;
+  height: 200px; */
+  padding:15px 10px;
+  border-radius:15px;
 }
 
 .task-content {
