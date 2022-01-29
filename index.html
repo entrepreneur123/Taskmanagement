@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="main">
+      <form class="form" id="task-form">
+        <div class="input">
+          <label>Title:</label>
+          <input
+            class="input__title"
+            type="text"
+            id="input__titleid"
+            placeholder="Enter Title"
+            onChange="{(val) => assignValue(val)}"
+          />
+          <label>Description:</label>
+          <input
+            class="input__description"
+            type="text"
+            id="input__descriptionid"
+            placeholder="Enter description"
+          />
+        </div>
+        <label>complexity:</label>
+        <select
+          name="complixity"
+          id="select_complexity"
+          class="complex"
+        ></select>
+        <label>Assign To</label>
+        <select name="assign" id="assign_task" class="assign"></select>
+        <br />
+        <div class="btn" id="btnid"></div>
+      </form>
+      <h1>Your todos</h1>
+      <div class="result" id="resultid"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
